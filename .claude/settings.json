@@ -1,0 +1,7 @@
+
+{
+  "statusLine": {
+    "type": "command",
+    "command": "bash /mnt/c/Autopaper/AutoPaper/.claude/statusline-command.sh"
+  }
+}

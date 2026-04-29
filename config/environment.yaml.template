@@ -1,0 +1,58 @@
+# SpiralResearch — 全局实验运行环境配置（模板）
+# 复制此文件为 environment.yaml 并填入你的实际配置：
+#   cp config/environment.yaml.template config/environment.yaml
+#
+# 注意: environment.yaml 已在 .gitignore 中，不会被提交到 git。
+#       请勿在模板文件中写入真实密码/密钥。
+
+environment:
+  # 运行模式: local | remote_ssh | remote_slurm
+  mode: "local"
+
+  # 本地环境配置（mode = local 时使用）
+  local:
+    python_path: ""                        # Python 解释器路径，如 "/home/user/miniconda3/envs/research/bin/python"
+    working_dir: "./experiments"           # 实验代码运行目录（相对项目根目录）
+    gpu_devices: "0"                       # CUDA_VISIBLE_DEVICES，空字符串表示 CPU only
+
+  # SSH 远程环境配置（mode = remote_ssh 时使用）
+  remote_ssh:
+    host: ""                               # 服务器 IP 或域名，示例: "192.168.1.100"
+    port: 22
+    user: ""                               # SSH 用户名
+    key_file: "~/.ssh/id_rsa"              # SSH 私钥路径
+    remote_working_dir: "~"                # 服务器上的工作根目录（项目将创建于此）
+                                            # 实际路径: {remote_working_dir}/AutoPaper/projects/{project_name}/experiments
+    gpu_devices: "0"
+    setup_commands:                        # 每次远程执行前运行的命令
+      - "source ~/.bashrc"
+
+  # Slurm 集群配置（mode = remote_slurm 时使用）
+  remote_slurm:
+    host: ""                               # 登录节点 IP 或域名
+    user: ""                               # SSH 用户名
+    key_file: "~/.ssh/id_rsa"
+    partition: "gpu"                       # Slurm partition 名称
+    account: ""                            # 计费账号（如需要）
+    gpus_per_node: 1
+    cpus_per_task: 4
+    mem: "16G"                             # 内存申请
+    time: "24:00:00"                       # 最大运行时间
+    remote_working_dir: "~"
+    setup_commands:
+      - "module load cuda/11.8"
+
+  # 通用实验预算配置
+  general:
+    iteration_time_budget: 120             # 单次实验迭代时间预算（分钟）
+    total_gpu_budget: 24                   # 总 GPU 时间预算（小时）
+    max_iterations: 20                     # 最大迭代次数
+    auto_sync: true                        # 是否自动同步代码到远程
+    sync_excludes:                         # rsync 排除的文件/目录
+      - "__pycache__"
+      - "*.pyc"
+      - ".git"
+      - "checkpoints"
+      - "results"
+      - "logs"
+      - "*.log"

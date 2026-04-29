@@ -1,0 +1,221 @@
+# SpiralResearch Venue Template Registry
+# Maps venue IDs to LaTeX templates, page limits, and compilation settings.
+# All template paths are relative to {framework_root}/templates/venue/
+
+venues:
+  arxiv:
+    name: "arXiv"
+    full_name: "arXiv Preprint Server"
+    type: "preprint"
+    year: null
+    page_limit: null
+    page_limit_note: "No fixed page limit. Typical preprints are 8-15 pages."
+    format: "single_column"
+    paper_size: "US Letter"
+    font_size: "11pt"
+    anonymous: false
+    style_package: "arxiv"
+    style_options:
+      default: "[]"
+    template_dir: "arxiv"
+    key_files:
+      - "arxiv.sty"
+      - "template.tex"
+    bib_style: "unsrt"
+    compile_cmd: "pdflatex"
+    compile_passes: 3
+    requires_bibtex: true
+    bibtex_inline_required: true  # arXiv does not run bibtex; must inline .bbl
+    checklist_required: false
+    supplementary_allowed: true
+    download_url: "https://github.com/kourgeorge/arxiv-style"
+
+  neurips:
+    name: "NeurIPS"
+    full_name: "Conference on Neural Information Processing Systems"
+    type: "conference"
+    year: 2025
+    page_limit: 9
+    page_limit_note: "Main content pages. References, checklist, and appendices do NOT count."
+    format: "single_column"
+    paper_size: "US Letter"
+    font_size: "10pt Times"
+    anonymous: true
+    style_package: "neurips_2025"
+    style_options:
+      submission: "[]"
+      preprint: "[preprint]"
+      final: "[final]"
+      nonatbib: "[nonatbib]"
+    template_dir: "neurips"
+    key_files:
+      - "neurips_2025.sty"
+      - "neurips_2025.tex"
+    bib_style: "unsrtnat"
+    compile_cmd: "pdflatex"
+    compile_passes: 3
+    requires_bibtex: true
+    checklist_required: true
+    supplementary_allowed: true
+    download_url: "https://neurips.cc/Conferences/2025/PaperInformation/StyleFiles"
+
+  icml:
+    name: "ICML"
+    full_name: "International Conference on Machine Learning"
+    type: "conference"
+    year: 2025
+    page_limit: 8
+    page_limit_note: "Main body. References and appendices excluded. Camera-ready: 9 pages."
+    format: "two_column"
+    paper_size: "US Letter"
+    font_size: "10pt Times"
+    anonymous: true
+    style_package: "icml2025"
+    style_options:
+      submission: "[]"
+      accepted: "[accepted]"
+      nohyperref: "[nohyperref]"
+    template_dir: "icml"
+    key_files:
+      - "icml2025.sty"
+      - "icml2025.bst"
+      - "example_paper.tex"
+    bib_style: "icml2025"
+    compile_cmd: "pdflatex"
+    compile_passes: 3
+    requires_bibtex: true
+    impact_statement_required: true
+    supplementary_allowed: true
+    download_url: "https://icml.cc/Conferences/2025/AuthorInstructions"
+
+  iclr:
+    name: "ICLR"
+    full_name: "International Conference on Learning Representations"
+    type: "conference"
+    year: 2026
+    page_limit: 9
+    page_limit_note: "Main text. References excluded. Rebuttal/camera-ready: 10 pages."
+    format: "single_column"
+    paper_size: "US Letter"
+    font_size: "10pt Times"
+    anonymous: true
+    style_package: "iclr2026_conference"
+    style_options:
+      submission: "[]"
+      final: "[final]"
+    template_dir: "iclr"
+    key_files:
+      - "iclr2026_conference.sty"
+      - "iclr2026_conference.bst"
+      - "iclr2026_conference.tex"
+    bib_style: "iclr2026_conference"
+    compile_cmd: "pdflatex"
+    compile_passes: 3
+    requires_bibtex: true
+    supplementary_allowed: true
+    download_url: "https://iclr.cc/Conferences/2026/AuthorGuide"
+
+  acl:
+    name: "ACL"
+    full_name: "Association for Computational Linguistics (ACL/EMNLP/NAACL/...)"
+    type: "conference"
+    year: 2023
+    page_limit: 8
+    page_limit_note: "Long paper content pages. References excluded. Camera-ready: 9 pages. Short papers: 4 pages."
+    format: "two_column"
+    paper_size: "A4"
+    font_size: "11pt"
+    anonymous: true
+    style_package: "acl"
+    style_options:
+      review: "[review]"
+      final: "[final]"
+      preprint: "[preprint]"
+      nohyperref: "[nohyperref]"
+    template_dir: "acl"
+    key_files:
+      - "acl2023.sty"
+      - "acl_natbib.bst"
+      - "acl2023.tex"
+    bib_style: "acl_natbib"
+    compile_cmd: "pdflatex"
+    compile_passes: 3
+    requires_bibtex: true
+    limitations_required: true
+    supplementary_allowed: true
+    download_url: "https://github.com/acl-org/acl-style-files"
+
+  cvpr:
+    name: "CVPR"
+    full_name: "IEEE/CVF Conference on Computer Vision and Pattern Recognition"
+    type: "conference"
+    year: 2026
+    page_limit: 8
+    page_limit_note: "Excluding references. Supplementary material allowed separately."
+    format: "two_column"
+    paper_size: "US Letter"
+    font_size: "10pt"
+    anonymous: true
+    style_package: "cvpr"
+    style_options:
+      review: "[review]"
+      final: "[]"
+      pagenumbers: "[pagenumbers]"
+    template_dir: "cvpr"
+    key_files:
+      - "cvpr.sty"
+      - "ieeenat_fullname.bst"
+      - "main.tex"
+    bib_style: "ieeenat_fullname"
+    compile_cmd: "pdflatex"
+    compile_passes: 3
+    requires_bibtex: true
+    supplementary_allowed: true
+    download_url: "https://github.com/cvpr-org/author-kit"
+
+  ieee_trans:
+    name: "IEEE Transactions"
+    full_name: "IEEE Transactions Journals"
+    type: "journal"
+    year: null
+    page_limit: null
+    page_limit_note: "No fixed page limit; varies by journal. Typically 10-14 pages for regular papers."
+    format: "two_column"
+    paper_size: "US Letter"
+    font_size: "10pt Times"
+    anonymous: false
+    style_package: "IEEEtran"
+    document_class: "IEEEtran"
+    class_options:
+      journal: "[journal]"
+      conference: "[conference]"
+      compsoc: "[compsoc]"
+    template_dir: "ieee_trans/IEEEtran"
+    key_files:
+      - "IEEEtran.cls"
+      - "bibtex/IEEEtran.bst"
+      - "bare_jrnl.tex"
+    bib_style: "IEEEtran"
+    compile_cmd: "pdflatex"
+    compile_passes: 3
+    requires_bibtex: true
+    supplementary_allowed: true
+    download_url: "https://template-selector.ieee.org/"
+
+# Default venue if user does not specify
+default_venue: "arxiv"
+
+# Page limit enforcement settings
+page_enforcement:
+  enabled: true
+  tolerance_pages: 0
+  backtrack_on_violation: true
+
+# Compilation settings
+compilation:
+  standard_sequence:
+    - "{compiler} -interaction=nonstopmode {main_tex}"
+    - "bibtex {main_tex_no_ext}"
+    - "{compiler} -interaction=nonstopmode {main_tex}"
+    - "{compiler} -interaction=nonstopmode {main_tex}"
+  latexmk_sequence: "latexmk -pdf -interaction=nonstopmode {main_tex}"

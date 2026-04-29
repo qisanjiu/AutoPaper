@@ -1,0 +1,41 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+venv/
+
+# Project outputs (generated projects live in sibling directory)
+projects/
+
+# LaTeX
+*.aux
+*.log
+*.out
+*.pdf
+*.synctex.gz
+
+# Experiments
+experiments/checkpoints/
+experiments/results/*.pt
+experiments/results/*.pth
+
+# IDE
+.vscode/
+.idea/
+
+# Environment config (may contain credentials)
+config/environment.yaml
+
+# Research reference repos (external, large, own git history)
+research_repos/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Other sensitive files
+*.key
+*.pem
+.env
+.env.*

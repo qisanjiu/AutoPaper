@@ -1,0 +1,35 @@
+# SpiralResearch — 论文作者信息配置
+# 位置: {AutoPaper根目录}/config/author_info.yaml
+# 作用: 所有研究项目共享的作者信息，用于最终论文编译时的作者区块
+#       Writing Agent 在 S26（论文大纲）和 S37（最终编译）阶段读取此文件
+# 注意: 请勿将此文件提交到 git（已加入 .gitignore）
+
+# 作者列表（支持多作者，按论文中的出现顺序排列）
+authors:
+  - name: "Zhehao Zhou"
+    affiliation: "College of Science, Jiangxi University of Science and Technology"
+    city: "Ganzhou"
+    province: "Jiangxi"
+    postal_code: "341000"
+    country: "China"
+    email: "zzh1497678847@gmail.com"
+    # ORCID 可选
+    orcid: ""
+    # 是否为通讯作者
+    corresponding: true
+    # 作者标记（用于 IEEE Trans 等需要上标标记的模板）
+    marker: "*"
+
+# 通讯作者信息（若与上述不同可单独填写）
+corresponding_author:
+  name: "Zhehao Zhou"
+  email: "zzh1497678847@gmail.com"
+
+# 致谢（可选，编译时会自动插入到 Acknowledgments 章节）
+acknowledgments: ""
+
+# 利益冲突声明（可选）
+conflict_of_interest: "The authors declare that they have no known competing financial interests or personal relationships that could have appeared to influence the work reported in this paper."
+
+# 资金支持（可选，用于 Funding 章节）
+funding: ""

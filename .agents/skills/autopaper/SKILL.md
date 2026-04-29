@@ -1,14 +1,14 @@
 ---
 name: autopaper
 description: |
-  全自动端到端科研框架 SpiralResearch (AutoPaper)。将科研全流程分解为
+  全自动端到端科研框架 AutoPaper (AutoPaper)。将科研全流程分解为
   8 Phase × 37 Stage，通过多 Agent 协作与三层 Critic 机制产出投稿质量论文。
-  当用户提及 AutoPaper、SpiralResearch、螺旋科研、全自动科研、自动写论文、
+  当用户提及 AutoPaper、AutoPaper、螺旋科研、全自动科研、自动写论文、
   自动投稿、帮我研究 XXX、运行 P3/S11、推进到 S25、创建新项目、查看项目状态、
   切换 venue，或要求创建/推进/回溯/审查研究项目时触发。
 ---
 
-# 执行 SpiralResearch (AutoPaper) 全自动科研流程
+# 执行 AutoPaper (AutoPaper) 全自动科研流程
 
 ## 牢记核心架构
 

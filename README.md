@@ -1,4 +1,4 @@
-# SpiralResearch — Autonomous Research Framework
+# AutoPaper — Autonomous Research Framework
 
 > **Version**: 0.3.0  
 > **Execution Model**: Native subagent strategy  
@@ -28,7 +28,7 @@ This project includes an auto-loading skill at `.agents/skills/autopaper/` that 
 - How to advance stages and run Gate reviews
 - The Context Recovery protocol
 
-**Trigger words**: "AutoPaper", "SpiralResearch", "全自动科研", "自动写论文", "运行 P3", "执行 S11", "创建新项目", "切换 venue", or any request to create/run/advance/backtrack a research project.
+**Trigger words**: "AutoPaper", "AutoPaper", "全自动科研", "自动写论文", "运行 P3", "执行 S11", "创建新项目", "切换 venue", or any request to create/run/advance/backtrack a research project.
 
 ### Execution Modes
 

@@ -1,6 +1,6 @@
-# SpiralResearch — Agent 全局上下文
+# AutoPaper — Agent 全局上下文
 
-> **作用范围**: 本文件适用于所有在 SpiralResearch 框架内工作的 Agent。  
+> **作用范围**: 本文件适用于所有在 AutoPaper 框架内工作的 Agent。  
 > **读取时机**: 每次会话初始化、Context Recovery、或不确定项目位置时。  
 
 ---

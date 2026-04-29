@@ -11,7 +11,7 @@
 例如：
 - 实验代码有 bug（S11）→ 得到了错误的结果（S12）→ 基于错误结果得出了错误结论（S23）→ 论文写错了（S29）→ 审稿人发现问题（S35）
 
-在 SpiralResearch 中，错误会在最早可能的阶段被发现，并**回溯到源头修复**：
+在 AutoPaper 中，错误会在最早可能的阶段被发现，并**回溯到源头修复**：
 - S12 发现代码 bug → 回溯到 S11 修复 → 重新运行 S12 → 继续前进
 - 或者 Analysis 在 S13 发现结果不合理 → 回溯到 S11/S12 → 修复后重新执行
 
@@ -19,11 +19,11 @@
 
 ## 2. 双循环架构：Inner Loop + Outer Loop
 
-借鉴 ai-research-skills 的设计，SpiralResearch 的反馈机制分为两个时间尺度的循环：
+借鉴 ai-research-skills 的设计，AutoPaper 的反馈机制分为两个时间尺度的循环：
 
 ### 2.1 Inner Loop（内部优化循环）
 
-Inner Loop 用于快速迭代优化。SpiralResearch 有两种 Inner Loop 模式：
+Inner Loop 用于快速迭代优化。AutoPaper 有两种 Inner Loop 模式：
 
 #### 模式 A：单 Stage 内循环
 
@@ -200,7 +200,7 @@ Conductor 持续监控：
 
 #### 4.1.1 人类审查 (Human Review) 触发回溯的通用规则 **[核心规范]**
 
-> **⚠️ 这是 SpiralResearch 的强制性核心流程，适用于所有 37 个 Stage。**
+> **⚠️ 这是 AutoPaper 的强制性核心流程，适用于所有 37 个 Stage。**
 
 **规则**：当人类审查（用户、导师、审稿人）指出**任意阶段**的产出存在需要修改的问题时，必须触发 **该阶段及其所有下游阶段** 的回溯更新。
 
@@ -589,7 +589,7 @@ Conductor 必须记录用户的干预到 decision_log。
 
 ## 7. 与现有工作流的对比
 
-| 机制 | SpiralResearch | ARIS | PaperOrchestra | AutoResearchClaw | ai-research-skills |
+| 机制 | AutoPaper | ARIS | PaperOrchestra | AutoResearchClaw | ai-research-skills |
 |------|---------------|------|----------------|-----------------|-------------------|
 | **Inner Loop** | **AutoResearch (S12) + PaperOrchestra (S36)** | 无 | Content Refinement | 快速实验 | 快速迭代 |
 | **Outer Loop** | **Backward Propagation + findings synthesis** | 重新运行 skill | 无 | --from-stage | findings.md 驱动 |
@@ -629,4 +629,4 @@ Conductor 必须记录用户的干预到 decision_log。
 
 ---
 
-> **总结**: SpiralResearch 的反馈与纠错机制确保工作流不是盲目的线性推进，而是能够**发现错误、回溯修复、螺旋前进**。这是真实科研过程的忠实模拟——科研从来不是在第一次就做对的。
+> **总结**: AutoPaper 的反馈与纠错机制确保工作流不是盲目的线性推进，而是能够**发现错误、回溯修复、螺旋前进**。这是真实科研过程的忠实模拟——科研从来不是在第一次就做对的。

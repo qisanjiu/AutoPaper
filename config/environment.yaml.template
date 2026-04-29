@@ -1,4 +1,4 @@
-# SpiralResearch — 全局实验运行环境配置（模板）
+# AutoPaper — 全局实验运行环境配置（模板）
 # 复制此文件为 environment.yaml 并填入你的实际配置：
 #   cp config/environment.yaml.template config/environment.yaml
 #

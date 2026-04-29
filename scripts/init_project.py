@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Initialize a new SpiralResearch project in the sibling directory."""
+"""Initialize a new AutoPaper project in the sibling directory."""
 import sys
 from pathlib import Path
 sys.path.insert(0, str(Path(__file__).parent.parent))

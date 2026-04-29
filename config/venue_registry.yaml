@@ -1,4 +1,4 @@
-# SpiralResearch Venue Template Registry
+# AutoPaper Venue Template Registry
 # Maps venue IDs to LaTeX templates, page limits, and compilation settings.
 # All template paths are relative to {framework_root}/templates/venue/
 
